@@ -1,0 +1,55 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
+//常量
+// C语言的中的常量分为一下几种：
+// 
+// ①字面常量，如：
+//int main()
+// {
+//   3.14
+//    10
+//   114514
+//   'a';
+//   "abcdef"
+
+//②const修饰的常变量
+// const int num = 10;//num就是常变量 - 具有常属性（不能被改变的属性）
+// num = 20;
+// printf("num = %d\n", num);//20
+// 
+// 被const修饰后的常变量，即便有常属性也仍然是变量，需要常量的地方是无法使用常变量的
+// 
+//
+
+//③#define 定义的标识符常量
+//如：#define MAX 10000
+// int n = MAX
+// printf("n = %d\n", n); 此处打印出来n=10000
+//
+
+//④枚举常量
+// 可以一一列举的常量
+// 如：
+#include <stdio.h>
+int main()
+{
+	//性别
+	enum Sex
+	{
+		//这种枚举类型的变量未来可能的取值
+		MALE,
+		FEMALE,
+		SECRET,
+		//这三个值就是枚举常量
+	};
+	enum Sex s = MALE;
+	printf("%d\n", MALE);
+	printf("%d\n", FEMALE);
+	printf("%d\n", SECRET);
+	return 0;
+}
+// 打印结果
+// 0
+// 1
+// 2
+//枚举常量默认从0开始
+//想要改变数字需要从开始给常量赋初值
